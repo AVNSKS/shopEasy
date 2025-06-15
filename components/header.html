@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopEasy Header</title>
+    <link rel="stylesheet" href="../styles/header.css" />
+  </head>
+  <body>
+    <header id="main-header" class="main-header">
+      <!-- Top Header -->
+      <div class="top-header">
+        <div class="container">
+          <div class="top-header-content">
+            <div class="top-header-left">
+              <span class="location-info">
+                <svg
+                  class="location-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Deliver to Mumbai 400001
+              </span>
+            </div>
+            <div class="top-header-right">
+              <span class="header-link">Customer Service</span>
+              <span class="header-link">Sell on ShopEasy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <div class="main-header-content">
+        <div class="container">
+          <div class="header-inner">
+            <!-- Logo -->
+            <a href="/" class="logo-link">
+              <div class="logo">ShopEasy</div>
+            </a>
+
+            <!-- Search Bar -->
+            <div id="search-container" class="search-container">
+              <!-- This will be populated by JavaScript -->
+            </div>
+
+            <!-- Right Section -->
+            <div class="header-actions">
+              <!-- Account Button -->
+              <button
+                class="action-btn account-btn"
+                onclick="handleAccountClick()"
+              >
+                <svg
+                  class="btn-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span class="btn-text">Account</span>
+              </button>
+
+              <!-- Cart Button -->
+              <a href="/cart.html" class="action-btn cart-btn">
+                <div class="cart-icon-container">
+                  <svg
+                    class="btn-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v4a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-4m8 0V9a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v4.01"
+                    ></path>
+                  </svg>
+                  <span id="cart-badge" class="cart-badge hidden">0</span>
+                </div>
+                <span class="btn-text">Cart</span>
+              </a>
+
+              <!-- Mobile Menu -->
+              <button
+                class="action-btn mobile-menu-btn"
+                onclick="toggleMobileMenu()"
+              >
+                <svg
+                  class="btn-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="4" x2="20" y1="6" y2="6"></line>
+                  <line x1="4" x2="20" y1="12" y2="12"></line>
+                  <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="nav-bar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="/" class="nav-link">All Categories</a>
+            <a href="/products.html?category=Electronics" class="nav-link"
+              >Electronics</a
+            >
+            <a href="/products.html?category=Fashion" class="nav-link"
+              >Fashion</a
+            >
+            <a
+              href="/products.html?category=Home%20%26%20Kitchen"
+              class="nav-link"
+              >Home & Kitchen</a
+            >
+            <a href="/products.html?category=Groceries" class="nav-link"
+              >Groceries</a
+            >
+            <a
+              href="/products.html?category=Health%20%26%20Beauty"
+              class="nav-link"
+              >Health & Beauty</a
+            >
+            <a href="/products.html?category=Sports" class="nav-link">Sports</a>
+            <a href="/products.html?category=Books" class="nav-link">Books</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <script src="../scripts/header.js"></script>
+    <script src="../scripts/search-bar.js"></script>
+  </body>
+</html>

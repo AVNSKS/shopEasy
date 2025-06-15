@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Card Component</title>
+    <link rel="stylesheet" href="../styles/product-card.css" />
+  </head>
+  <body>
+    <!-- Product Card Template -->
+    <template id="product-card-template">
+      <a href="#" class="product-card-link">
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="" alt="" class="product-image" />
+            <div class="product-badges">
+              <!-- Discount badge will be added here if applicable -->
+              <!-- Out of stock overlay will be added here if applicable -->
+              <!-- Brand badge will be added here if applicable -->
+            </div>
+          </div>
+
+          <div class="product-content">
+            <div class="product-info">
+              <h3 class="product-name"></h3>
+
+              <div class="product-rating">
+                <div class="rating-container">
+                  <svg
+                    class="star-icon"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polygon
+                      points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                    ></polygon>
+                  </svg>
+                  <span class="rating-value"></span>
+                </div>
+                <span class="reviews-count"></span>
+              </div>
+
+              <div class="product-pricing">
+                <span class="current-price"></span>
+                <span class="original-price"></span>
+              </div>
+
+              <div class="product-features"></div>
+            </div>
+
+            <button class="add-to-cart-btn" onclick="handleAddToCart(event)">
+              <svg
+                class="cart-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v4a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-4m8 0V9a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v4.01"
+                ></path>
+              </svg>
+              <span class="btn-text">Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </a>
+    </template>
+
+    <!-- Example usage container -->
+    <div id="products-container" class="products-grid">
+      <!-- Product cards will be generated here -->
+    </div>
+
+    <script src="../scripts/product-card.js"></script>
+
+    <!-- Example usage -->
+    <script>
+      // Example products data
+      const sampleProducts = [
+        {
+          id: "1",
+          name: "Wireless Bluetooth Headphones with Noise Cancellation",
+          price: 2999,
+          originalPrice: 4999,
+          rating: 4.5,
+          reviews: 1234,
+          image:
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop",
+          discount: 40,
+          brand: "Sony",
+          inStock: true,
+          features: ["Noise Cancellation", "30hrs Battery", "Quick Charge"],
+        },
+        {
+          id: "2",
+          name: "Smart Fitness Watch with Heart Rate Monitor",
+          price: 1499,
+          originalPrice: null,
+          rating: 4.3,
+          reviews: 856,
+          image:
+            "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop",
+          discount: null,
+          brand: "Fitbit",
+          inStock: false,
+          features: ["Heart Rate Monitor", "GPS Tracking", "Water Resistant"],
+        },
+      ];
+
+      // Render example products
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("products-container");
+        if (container && window.ProductCardRenderer) {
+          sampleProducts.forEach((product) => {
+            const cardElement =
+              window.ProductCardRenderer.createProductCard(product);
+            container.appendChild(cardElement);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
