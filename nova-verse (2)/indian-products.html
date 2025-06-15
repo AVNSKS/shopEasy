@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Made in India Products - ShopEasy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="indian-products-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Basic styling for the page */
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      /* Header styles */
+      .header {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: #1a73e8;
+      }
+      
+      .logo-icon {
+        margin-right: 10px;
+      }
+      
+      .nav {
+        display: flex;
+        gap: 20px;
+      }
+      
+      .nav-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+      
+      .nav-link.active {
+        color: #1a73e8;
+        font-weight: 600;
+      }
+      
+      /* Hero section */
+      .indian-hero {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+      
+      .indian-hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      
+      .indian-hero p {
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      /* Filters section */
+      .filters-section {
+        background-color: #f8f9fa;
+        padding: 20px 0;
+      }
+      
+      .filters-row {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+      
+      .filter-select, .search-indian {
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      
+      .search-indian {
+        flex-grow: 1;
+        max-width: 500px;
+      }
+      
+      /* Products grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 40px 0;
+      }
+      
+      .product-card-indian {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      
+      .product-card-indian:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      .product-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+      }
+      
+      .product-title {
+        padding: 15px;
+        margin: 0;
+        font-size: 16px;
+      }
+      
+      .product-pricing {
+        padding: 0 15px 15px;
+      }
+      
+      .product-price {
+        font-weight: 700;
+        color: #1a73e8;
+        font-size: 18px;
+      }
+      
+      /* Load more button */
+      .load-more-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 12px 30px;
+        background-color: #1a73e8;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .load-more-btn:hover {
+        background-color: #0d5bba;
+      }
+      
+      /* Footer */
+      .footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+      }
+      
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+        }
+        
+        .nav {
+          margin-top: 15px;
+        }
+        
+        .filters-row {
+          flex-direction: column;
+        }
+        
+        .search-indian {
+          width: 100%;
+        }
+        
+        .products-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body class="indian-products-page">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">
+              <span class="logo-icon">🛒</span>
+              <span class="logo-text">ShopEasy</span>
+            </a>
+          </div>
+          <nav class="nav">
+            <a href="index.html" class="nav-link">🏠 Home</a>
+            <a href="products.html" class="nav-link">📱 Electronics</a>
+            <a href="indian-products.html" class="nav-link active">🇮🇳 Made in India</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="indian-hero">
+      <div class="container">
+        <h1>Made in India</h1>
+        <p>
+          Discover authentic Indian products crafted with love and tradition.
+          Support local artisans and celebrate the heritage of India.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+      <div class="container">
+        <div class="filters-row">
+          <select class="filter-select" id="categoryFilter" onchange="filterProducts()">
+            <option value="">All Categories</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Handicrafts">Handicrafts</option>
+          </select>
+          <input
+            type="text"
+            class="search-indian"
+            id="indianSearchInput"
+            placeholder="Search Indian products..."
+            onkeypress="if(event.key==='Enter') searchIndianProducts()"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-container">
+      <div class="container">
+        <div id="indianProductsGrid" class="products-grid">
+          <!-- Products will be dynamically loaded -->
+        </div>
+        <button id="loadMoreBtn" class="load-more-btn" onclick="loadMoreProducts()">Load More</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 ShopEasy - Made in India. Supporting Indian artisans and heritage.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        loadIndianProducts();
+      });
+
+      function loadIndianProducts() {
+        const products = [
+          {
+            id: "1",
+            name: "Handmade Banarasi Silk Saree",
+            price: 2499,
+            category: "Fashion",
+            image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          },
+          {
+            id: "2",
+            name: "Organic Turmeric Powder",
+            price: 199,
+            category: "Groceries",
+            image: "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          },
+          {
+            id: "3",
+            name: "Handcrafted Wooden Elephant",
+            price: 899,
+            category: "Handicrafts",
+            image: "https://images.unsplash.com/photo-1604725333736-1f962a6218d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          },
+          {
+            id: "4",
+            name: "Blue Pottery Tea Set",
+            price: 1299,
+            category: "Handicrafts",
+            image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          },
+          {
+            id: "5",
+            name: "Cotton Kurta with Churidar",
+            price: 1499,
+            category: "Fashion",
+            image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          },
+          {
+            id: "6",
+            name: "Assam Black Tea Leaves",
+            price: 349,
+            category: "Groceries",
+            image: "https://images.unsplash.com/photo-1564894809619-44586443965c?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          },
+          {
+            id: "7",
+            name: "Handwoven Jute Bag",
+            price: 599,
+            category: "Handicrafts",
+            image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          },
+          {
+            id: "8",
+            name: "Kashmiri Saffron (1g)",
+            price: 499,
+            category: "Groceries",
+            image: "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+          }
+        ];
+
+        const grid = document.getElementById("indianProductsGrid");
+        grid.innerHTML = products
+          .map(
+            (product) => `
+          <div class="product-card-indian" data-category="${product.category}">
+            <div class="product-image" style="background-image: url('${product.image}')"></div>
+            <h4 class="product-title">${product.name}</h4>
+            <div class="product-pricing">
+              <span class="product-price">₹${product.price}</span>
+            </div>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      function filterProducts() {
+        const category = document.getElementById("categoryFilter").value;
+        const products = document.querySelectorAll(".product-card-indian");
+        
+        products.forEach(product => {
+          if (category === "" || product.dataset.category === category) {
+            product.style.display = "block";
+          } else {
+            product.style.display = "none";
+          }
+        });
+      }
+
+      function searchIndianProducts() {
+        const searchTerm = document.getElementById("indianSearchInput").value.toLowerCase();
+        const products = document.querySelectorAll(".product-card-indian");
+        
+        products.forEach(product => {
+          const title = product.querySelector(".product-title").textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            product.style.display = "block";
+          } else {
+            product.style.display = "none";
+          }
+        });
+      }
+
+      function loadMoreProducts() {
+        // In a real implementation, this would fetch more products from an API
+        alert("Loading more Indian products...");
+      }
+    </script>
+  </body>
+</html>

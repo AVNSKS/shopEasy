@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopEasy - Your One-Stop Shopping Destination</title>
+    <meta
+      name="description"
+      content="Shop for electronics, fashion, home & kitchen, groceries and more at the best prices. Free shipping on orders above ₹999."
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/ui-components.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="shop-easy-app">
+    <!-- Header Component -->
+    <header id="main-header" class="main-header">
+      <!-- Top Header -->
+      <div class="top-header">
+        <div class="container">
+          <div class="top-header-content">
+            <div class="top-header-left">
+              <span class="location-info">
+                <svg
+                  class="location-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Deliver to Mumbai 400001
+              </span>
+            </div>
+            <div class="top-header-right">
+              <span class="header-link">Customer Service</span>
+              <span class="header-link">Sell on ShopEasy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <div class="main-header-content">
+        <div class="container">
+          <div class="header-inner">
+            <!-- Logo -->
+            <a href="#" class="logo-link" onclick="navigateTo('home')">
+              <div class="logo">ShopEasy</div>
+            </a>
+
+            <!-- Search Bar -->
+            <form class="search-form" onsubmit="handleSearch(event)">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search for products, brands and more..."
+                id="main-search-input"
+              />
+              <button type="submit" class="search-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+              </button>
+            </form>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+              <button
+                class="action-btn account-btn"
+                onclick="handleAccountClick()"
+              >
+                <svg
+                  class="btn-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span class="btn-text">Account</span>
+              </button>
+
+              <button class="action-btn cart-btn" onclick="navigateTo('cart')">
+                <div class="cart-icon-container">
+                  <svg
+                    class="btn-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v4a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-4m8 0V9a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v4.01"
+                    ></path>
+                  </svg>
+                  <span id="cart-badge" class="cart-badge hidden">0</span>
+                </div>
+                <span class="btn-text">Cart</span>
+              </button>
+
+              <button
+                class="action-btn mobile-menu-btn"
+                onclick="toggleMobileMenu()"
+              >
+                <svg
+                  class="btn-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="4" x2="20" y1="6" y2="6"></line>
+                  <line x1="4" x2="20" y1="12" y2="12"></line>
+                  <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="nav-bar">
+        <div class="container">
+          <div class="nav-content">
+            <a href="#" class="nav-link" onclick="showAllCategories()"
+              >All Categories</a
+            >
+            <a
+              href="#"
+              class="nav-link"
+              onclick="filterByCategory('Electronics')"
+              >Electronics</a
+            >
+            <a href="#" class="nav-link" onclick="filterByCategory('Fashion')"
+              >Fashion</a
+            >
+            <a
+              href="#"
+              class="nav-link"
+              onclick="filterByCategory('Home & Kitchen')"
+              >Home & Kitchen</a
+            >
+            <a
+              href="#"
+              class="nav-link"
+              onclick="filterByCategory('Groceries & Food')"
+              >Groceries</a
+            >
+            <a
+              href="#"
+              class="nav-link"
+              onclick="filterByCategory('Beauty & Personal Care')"
+              >Health & Beauty</a
+            >
+            <a
+              href="#"
+              class="nav-link"
+              onclick="filterByCategory('Sports & Fitness')"
+              >Sports</a
+            >
+            <a
+              href="#"
+              class="nav-link"
+              onclick="filterByCategory('Books & Stationery')"
+              >Books</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="main-content">
+      <!-- Content will be dynamically loaded here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 class="footer-title">ShopEasy</h3>
+            <p class="footer-description">
+              Your one-stop destination for all daily essentials at the best
+              prices.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">About Us</a></li>
+              <li><a href="#" class="footer-link">Contact</a></li>
+              <li><a href="#" class="footer-link">Help</a></li>
+              <li><a href="#" class="footer-link">Careers</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-heading">Categories</h4>
+            <ul class="footer-links">
+              <li>
+                <a
+                  href="#"
+                  class="footer-link"
+                  onclick="filterByCategory('Electronics')"
+                  >Electronics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer-link"
+                  onclick="filterByCategory('Fashion')"
+                  >Fashion</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer-link"
+                  onclick="filterByCategory('Home & Kitchen')"
+                  >Home & Kitchen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer-link"
+                  onclick="filterByCategory('Groceries & Food')"
+                  >Groceries</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 class="footer-heading">Customer Service</h4>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Return Policy</a></li>
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+              <li><a href="#" class="footer-link">Track Order</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 ShopEasy. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/utils.js"></script>
+    <script src="data/products.js"></script>
+    <script src="scripts/ui-components.js"></script>
+    <script src="scripts/cart-manager.js"></script>
+    <script src="scripts/router.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
